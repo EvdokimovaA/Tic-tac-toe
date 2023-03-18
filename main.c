@@ -17,11 +17,11 @@ int main()
 {
     char pole[3][4]={{'1','2','3'},{'4','5','6'},{'7','8','9'}};
     setlocale(LC_ALL, "Rus");
-    printf("Игра крестики-нолики\n");
-    printf("Пользователь - крестики\n");
-    printf("Компьютер - нолики\n");
+    printf("РРіСЂР° РєСЂРµСЃС‚РёРєРё-РЅРѕР»РёРєРё\n");
+    printf("РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ - РєСЂРµСЃС‚РёРєРё\n");
+    printf("РљРѕРјРїСЊСЋС‚РµСЂ - РЅРѕР»РёРєРё\n");
     printf("\n\n");
-    printf("Пример номеров ячеек игрового поля\n");
+    printf("РџСЂРёРјРµСЂ РЅРѕРјРµСЂРѕРІ СЏС‡РµРµРє РёРіСЂРѕРІРѕРіРѕ РїРѕР»СЏ\n");
 
     printf("|-1-|-2-|-3-|\n");
     printf("|-4-|-5-|-6-|\n");
@@ -89,9 +89,9 @@ return 0;
 
 int polezap(char pole[][4])
 {
-    if (pole==NULL) {printf("Ошибка вывода поля"); return 1;}
+    if (pole==NULL) {printf("РћС€РёР±РєР° РІС‹РІРѕРґР° РїРѕР»СЏ"); return 1;}
     system("cls");
-    printf("Игровое поле\n\n");
+    printf("РРіСЂРѕРІРѕРµ РїРѕР»Рµ\n\n");
     printf("|-%c-|-%c-|-%c-|\n", pole[0][0],pole[0][1], pole[0][2]);
     printf("|-%c-|-%c-|-%c-|\n", pole[1][0],pole[1][1], pole[1][2]);
     printf("|-%c-|-%c-|-%c-|\n\n", pole[2][0],pole[2][1], pole[2][2]);
@@ -100,14 +100,14 @@ int polezap(char pole[][4])
 
 int vvodp(char pole[][4], int *n, int *m)
 {
-    if (pole==NULL) {printf("Ошибка вывода поля"); return 1;}
-    if (n==NULL) {printf ("Ошибка второго аргумента функции"); return 2;}
-    if (m==NULL) {printf ("Ошибка третьего аргумента функции"); return 3;}
+    if (pole==NULL) {printf("РћС€РёР±РєР° РІС‹РІРѕРґР° РїРѕР»СЏ"); return 1;}
+    if (n==NULL) {printf ("РћС€РёР±РєР° РІС‚РѕСЂРѕРіРѕ Р°СЂРіСѓРјРµРЅС‚Р° С„СѓРЅРєС†РёРё"); return 2;}
+    if (m==NULL) {printf ("РћС€РёР±РєР° С‚СЂРµС‚СЊРµРіРѕ Р°СЂРіСѓРјРµРЅС‚Р° С„СѓРЅРєС†РёРё"); return 3;}
     int ch1=0, cell;
     char p;
     size_t i, j;
-    printf("Введите число от 1 до 9\n");
-    if ((scanf("%d", &cell)!=1) || (cell==0)) {printf("Ошибка ввода\n"); return 4;}
+    printf("Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ РѕС‚ 1 РґРѕ 9\n");
+    if ((scanf("%d", &cell)!=1) || (cell==0)) {printf("РћС€РёР±РєР° РІРІРѕРґР°\n"); return 4;}
     if ((cell>=1)&&(cell<=9))
         {
             p=cell+'0';
@@ -119,9 +119,9 @@ int vvodp(char pole[][4], int *n, int *m)
                     }
                 }
             if (ch1 > 0) {polezap(pole);}
-            else {printf ("Вы выбрали занятую ячейку\n"); vvodp(pole, n, m);}
+            else {printf ("Р’С‹ РІС‹Р±СЂР°Р»Рё Р·Р°РЅСЏС‚СѓСЋ СЏС‡РµР№РєСѓ\n"); vvodp(pole, n, m);}
         }
-    else {printf("Введено неверное значение\n"); vvodp(pole, n, m);}
+    else {printf("Р’РІРµРґРµРЅРѕ РЅРµРІРµСЂРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ\n"); vvodp(pole, n, m);}
     return 0;
 }
 
@@ -130,9 +130,9 @@ int hodkomp1(char pole[][4], int *n, int *m)
     char number[5]={'1','3','7','9'};
     size_t i, j;
     int col, ch2=0;
-    if (pole==NULL) {printf("Ошибка поля"); return 1;}
-    if (n==NULL) {printf ("Ошибка второго аргумента функции"); return 2;}
-    if (m==NULL) {printf ("Ошибка третьего аргумента функции"); return 3;}
+    if (pole==NULL) {printf("РћС€РёР±РєР° РїРѕР»СЏ"); return 1;}
+    if (n==NULL) {printf ("РћС€РёР±РєР° РІС‚РѕСЂРѕРіРѕ Р°СЂРіСѓРјРµРЅС‚Р° С„СѓРЅРєС†РёРё"); return 2;}
+    if (m==NULL) {printf ("РћС€РёР±РєР° С‚СЂРµС‚СЊРµРіРѕ Р°СЂРіСѓРјРµРЅС‚Р° С„СѓРЅРєС†РёРё"); return 3;}
     if (pole[1][1]=='X')
     {
         srand (time (NULL));
@@ -155,7 +155,7 @@ int hodkomp1(char pole[][4], int *n, int *m)
         }
     else if (((pole[0][1]=='X')||(pole[1][0]=='X')||(pole[1][2]=='X')||(pole[2][1]=='X'))&& (ch2==0))
     {pole[1][1]='0'; ch2=1; polezap(pole);}
-    if (ch2==0) {printf ("Ошибка хода компьютера"); return 4;}
+    if (ch2==0) {printf ("РћС€РёР±РєР° С…РѕРґР° РєРѕРјРїСЊСЋС‚РµСЂР°"); return 4;}
     return 0;}
 
 
@@ -170,9 +170,9 @@ int hodkomp2(char pole[][4], int *n, int *m)
     int k=0, ch3=0;
     size_t i, j;
 
-    if (pole==NULL) {printf("Ошибка поля"); return 1;}
-    if (n==NULL) {printf ("Ошибка второго аргумента функции"); return 2;}
-    if (m==NULL) {printf ("Ошибка третьего аргумента функции"); return 3;}
+    if (pole==NULL) {printf("РћС€РёР±РєР° РїРѕР»СЏ"); return 1;}
+    if (n==NULL) {printf ("РћС€РёР±РєР° РІС‚РѕСЂРѕРіРѕ Р°СЂРіСѓРјРµРЅС‚Р° С„СѓРЅРєС†РёРё"); return 2;}
+    if (m==NULL) {printf ("РћС€РёР±РєР° С‚СЂРµС‚СЊРµРіРѕ Р°СЂРіСѓРјРµРЅС‚Р° С„СѓРЅРєС†РёРё"); return 3;}
 
     for (i=0; i<*n; i++)
     {
@@ -339,7 +339,7 @@ int hodkomp2(char pole[][4], int *n, int *m)
         if (pole[2][2]!='X' && pole[2][2]!='0' && ch3==0) {pole[2][2]='0'; ch3=1; polezap(pole);}
     }
 
-    if ((k==0) && (ch3==0)) {printf("Ошибка хода компьютера"); return 4;}
+    if ((k==0) && (ch3==0)) {printf("РћС€РёР±РєР° С…РѕРґР° РєРѕРјРїСЊСЋС‚РµСЂР°"); return 4;}
     return 0;
 }
 
@@ -347,44 +347,44 @@ int checkwin(char pole[][4], int *n, int *m, int *w)
 {
     size_t i;
     int win=0;
-    if (pole==NULL) {printf("Ошибка поля"); return 1;}
-    if (n==NULL) {printf ("Ошибка второго аргумента функции"); return 2;}
-    if (m==NULL) {printf ("Ошибка третьего аргумента функции"); return 3;}
-    if (w==NULL) {printf("Ошибка четвертого аргумента функции"); return 4;}
-    if ((pole[0][0]==pole[1][1]) && (pole[1][1]==pole[2][2]) && (pole[0][0]=='X') && (win==0)) {printf("Вы победили!\n"); win=1; }
-    else if ((pole[0][0]==pole[1][1]) && (pole[1][1]==pole[2][2]) && (pole[0][0]=='0') && (win==0)) {printf("Победил компьютер!\n"); win=1;}
-    else if ((pole[0][2]==pole[1][1]) && (pole[1][1]==pole[2][0]) && (pole[0][2]=='X') && (win==0)) {printf("Вы победили!\n"); win=1; }
-    else if ((pole[0][2]==pole[1][1]) && (pole[1][1]==pole[2][0]) && (pole[0][2]=='0') && (win==0)) {printf("Победил компьютер!\n"); win=1;}
+    if (pole==NULL) {printf("РћС€РёР±РєР° РїРѕР»СЏ"); return 1;}
+    if (n==NULL) {printf ("РћС€РёР±РєР° РІС‚РѕСЂРѕРіРѕ Р°СЂРіСѓРјРµРЅС‚Р° С„СѓРЅРєС†РёРё"); return 2;}
+    if (m==NULL) {printf ("РћС€РёР±РєР° С‚СЂРµС‚СЊРµРіРѕ Р°СЂРіСѓРјРµРЅС‚Р° С„СѓРЅРєС†РёРё"); return 3;}
+    if (w==NULL) {printf("РћС€РёР±РєР° С‡РµС‚РІРµСЂС‚РѕРіРѕ Р°СЂРіСѓРјРµРЅС‚Р° С„СѓРЅРєС†РёРё"); return 4;}
+    if ((pole[0][0]==pole[1][1]) && (pole[1][1]==pole[2][2]) && (pole[0][0]=='X') && (win==0)) {printf("Р’С‹ РїРѕР±РµРґРёР»Рё!\n"); win=1; }
+    else if ((pole[0][0]==pole[1][1]) && (pole[1][1]==pole[2][2]) && (pole[0][0]=='0') && (win==0)) {printf("РџРѕР±РµРґРёР» РєРѕРјРїСЊСЋС‚РµСЂ!\n"); win=1;}
+    else if ((pole[0][2]==pole[1][1]) && (pole[1][1]==pole[2][0]) && (pole[0][2]=='X') && (win==0)) {printf("Р’С‹ РїРѕР±РµРґРёР»Рё!\n"); win=1; }
+    else if ((pole[0][2]==pole[1][1]) && (pole[1][1]==pole[2][0]) && (pole[0][2]=='0') && (win==0)) {printf("РџРѕР±РµРґРёР» РєРѕРјРїСЊСЋС‚РµСЂ!\n"); win=1;}
 
     if (win==0)
     {
         for (i=0;i<*n;i++)
         {
-            if ((pole[i][0]==pole[i][1]) && (pole[i][1]==pole[i][2]) && (pole[i][0]=='X') && (win==0)) { printf("Вы победили!\n"); win=1; }
-            else if ((pole[i][0]==pole[i][1]) && (pole[i][1]==pole[i][2]) && (pole[i][0]=='0') &&(win==0)) { printf("Победил компьютер!\n"); win=1;}
+            if ((pole[i][0]==pole[i][1]) && (pole[i][1]==pole[i][2]) && (pole[i][0]=='X') && (win==0)) { printf("Р’С‹ РїРѕР±РµРґРёР»Рё!\n"); win=1; }
+            else if ((pole[i][0]==pole[i][1]) && (pole[i][1]==pole[i][2]) && (pole[i][0]=='0') &&(win==0)) { printf("РџРѕР±РµРґРёР» РєРѕРјРїСЊСЋС‚РµСЂ!\n"); win=1;}
         }
     }
     if (win==0)
     {
         for (i=0;i<*n;i++)
         {
-            if ((pole[0][i]==pole[1][i]) && (pole[1][i]==pole[2][i]) && (pole[0][i]=='X') &&(win==0)) { printf("Вы победили!\n"); win=1;}
-            else if ((pole[0][i]==pole[1][i]) && (pole[1][i]==pole[2][i]) && (pole[0][i]=='0') && (win==0)) { printf("Победил компьютер!\n"); win=1;} }
+            if ((pole[0][i]==pole[1][i]) && (pole[1][i]==pole[2][i]) && (pole[0][i]=='X') &&(win==0)) { printf("Р’С‹ РїРѕР±РµРґРёР»Рё!\n"); win=1;}
+            else if ((pole[0][i]==pole[1][i]) && (pole[1][i]==pole[2][i]) && (pole[0][i]=='0') && (win==0)) { printf("РџРѕР±РµРґРёР» РєРѕРјРїСЊСЋС‚РµСЂ!\n"); win=1;} }
         }
 
     if (win==0) (*w)++;
-    if ((*w)==0) {printf("Ошибка проверки на победу"); return 5;}
-    if ((*w)==5) printf("Ничья\n");
+    if ((*w)==0) {printf("РћС€РёР±РєР° РїСЂРѕРІРµСЂРєРё РЅР° РїРѕР±РµРґСѓ"); return 5;}
+    if ((*w)==5) printf("РќРёС‡СЊСЏ\n");
     return 0;}
 
 int exitfunc(char pole[][4], int *n, int *m)
 {
     int ex=0;
-    if (pole==NULL) {printf("Ошибка поля"); return 1;}
-    if (n==NULL) {printf ("Ошибка второго аргумента функции"); return 2;}
-    if (m==NULL) {printf ("Ошибка третьего аргумента функции"); return 3;}
-    printf("Хотите сыграть ещё раз?\n");
-    printf("1-да\n2-нет\n");
+    if (pole==NULL) {printf("РћС€РёР±РєР° РїРѕР»СЏ"); return 1;}
+    if (n==NULL) {printf ("РћС€РёР±РєР° РІС‚РѕСЂРѕРіРѕ Р°СЂРіСѓРјРµРЅС‚Р° С„СѓРЅРєС†РёРё"); return 2;}
+    if (m==NULL) {printf ("РћС€РёР±РєР° С‚СЂРµС‚СЊРµРіРѕ Р°СЂРіСѓРјРµРЅС‚Р° С„СѓРЅРєС†РёРё"); return 3;}
+    printf("РҐРѕС‚РёС‚Рµ СЃС‹РіСЂР°С‚СЊ РµС‰С‘ СЂР°Р·?\n");
+    printf("1-РґР°\n2-РЅРµС‚\n");
     scanf("%d", &ex);
     if ((ex==1) || (ex==2))
     {
@@ -394,17 +394,17 @@ int exitfunc(char pole[][4], int *n, int *m)
             polezap2(pole, n, m);
             main();
         }
-        if (ex==2) {printf("Спасибо за игру!"); return 0;}
+        if (ex==2) {printf("РЎРїР°СЃРёР±Рѕ Р·Р° РёРіСЂСѓ!"); return 0;}
     }
-    else {printf("Ошибка ввода");return 4;}
+    else {printf("РћС€РёР±РєР° РІРІРѕРґР°");return 4;}
     return 0;
 }
 
 int polezap2(char pole[][4],int *n, int *m)
 {
-    if (pole==NULL) {printf("Ошибка поля"); return 1;}
-    if (n==NULL) {printf ("Ошибка второго аргумента функции"); return 2;}
-    if (m==NULL) {printf ("Ошибка третьего аргумента функции"); return 3;}
+    if (pole==NULL) {printf("РћС€РёР±РєР° РїРѕР»СЏ"); return 1;}
+    if (n==NULL) {printf ("РћС€РёР±РєР° РІС‚РѕСЂРѕРіРѕ Р°СЂРіСѓРјРµРЅС‚Р° С„СѓРЅРєС†РёРё"); return 2;}
+    if (m==NULL) {printf ("РћС€РёР±РєР° С‚СЂРµС‚СЊРµРіРѕ Р°СЂРіСѓРјРµРЅС‚Р° С„СѓРЅРєС†РёРё"); return 3;}
     int f=0;
     size_t i,j;
     for (i=0; i<*n; i++)
@@ -415,6 +415,6 @@ int polezap2(char pole[][4],int *n, int *m)
             pole[i][j]=f+'0';
         }
     }
-    if (f==0) {printf ("Ошибка заполнения поля"); return 4;}
+    if (f==0) {printf ("РћС€РёР±РєР° Р·Р°РїРѕР»РЅРµРЅРёСЏ РїРѕР»СЏ"); return 4;}
     return 0;
 }
